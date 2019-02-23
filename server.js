@@ -1,25 +1,39 @@
-// Pull in required dependencies
-var express = require('express');
-var bodyParser = require('body-parser');
-var path = require('path');
+var express = require("express");
+var path = require("path");
 
-// Configure the Express application
+
+// Tells node that we are creating an "express" server
 var app = express();
-var PORT = process.env.PORT;
 
-// Expose the public directory to access CSS files
-app.use(express.static(path.join(__dirname, './app/public')));
+// Sets an initial port. We"ll use this later in the listener
+var PORT = process.env.PORT || 1738;
 
-// Add middleware for parsing incoming request bodies
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.text());
+// express.json and express.urlEncoded make it easy for the server to interpret data sent to it.
+// The code below is pretty standard.
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.static("css"));
+app.use("/css", express.static(path.join(__dirname, "/css")));
 
-// Add the application routes
-require(path.join(__dirname, './app/routing/apiRoutes'))(app);
-require(path.join(__dirname, './app/routing/htmlRoutes'))(app);
 
-// Start listening on PORT
+// LISTENER
+// The below code "starts" the server
+app.get("/", function(req, res) {
+  res.sendFile(path.join(__dirname, "./index.html"));
+});
+
+app.get("/survey", function(req, res) {
+  res.sendFile(path.join(__dirname, "./survey.html"));
+});
+
+app.get("/gitHubRepo", function(req, res) {
+  res.sendFile(path.join(__dirname, "./gitHubRepo.html"));
+});
+
+app.get("/apiFriendList", function(req, res) {
+  res.sendFile(path.join(__dirname, "./apiFriendList.html"));
+});
+
 app.listen(PORT, function() {
-  console.log('Friend Finder app is listening on PORT: ' + PORT);
+  console.log("App listening on PORT: " + PORT);
 });

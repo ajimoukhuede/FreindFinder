@@ -1,0 +1,87 @@
+h4 {
+    font-size: large;
+    font-size: 50px;
+}
+
+/* h1 {
+    display: block;
+    height: 1px;
+    border: 0px;
+    border-top: 3px solid #ccc;
+    margin: 1em 0;
+    padding: 10px;
+} */
+
+.nameProfile {
+    border-top-style: solid;
+    border-color: rgba(0,0,0,0.5);
+    border-width: 1px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding: 45px;
+    font-size: 30px;
+  }
+  .topLeft {
+    float: left;
+    margin-right: 200px;
+  }
+  .topRight {
+  }
+
+h2 {
+    display: flex;
+   
+    padding: 10px;
+    
+}
+
+
+.q1 {
+    font-size: 30px;
+}
+.q2 {
+    font-size: 30px;
+}
+.q3 {
+    font-size: 30px;
+}
+.q4 {
+    font-size: 30px;
+}
+.q5 {
+    font-size: 30px;
+}
+.q6 {
+    font-size: 30px;
+}
+.q7 {
+    font-size: 30px;
+}
+.q8 {
+    font-size: 30px;
+}
+.q9 {
+    font-size: 30px;
+}
+.q10 {
+    font-size: 30px;
+}
+.form-group {
+    font-size: 18px;
+}
+
+#buttonID {
+    width: 500px;
+    text-align: center;
+    font-size: 35px;
+    background-color: green;
+    color: white;
+    border-radius: 6px;
+    margin: auto;
+    height: 70px;
+    cursor: pointer;
+}
+
+#buttonID:hover {
+    background-color: blue;
+}

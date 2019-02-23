@@ -1,0 +1,14 @@
+p {
+    position: relative;
+    text-align: center;
+    top: 220px;
+    right: 230px;
+    color: blue;
+}
+
+div {
+    padding: 200px;
+    font-size: 35px;
+    font-size: large;
+    font-size: 70px;
+}
